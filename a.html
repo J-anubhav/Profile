@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Poppins:wght@400;500;600;700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <title>Developer Portfolio</title>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {}
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #0d6efd;
+        }
+        .group:hover .group-hover\:block {
+            display: block;
+        }
+        .group:hover .group-hover\:opacity-100 {
+            opacity: 1;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .dark {
+            --primary-color: #4285f4;
+        }
+        .experience-hover {
+            transition: all 0.3s ease;
+        }
+        .dark-mode-toggle {
+            transition: all 0.3s ease;
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.8s ease-out;
+        }
+        html:not(.dark) {
+            color-scheme: light;
+        }
+        html.dark {
+            color-scheme: dark;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
+        <header class="fixed top-0 z-50 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-md transition-all">
+            <nav class="container mx-auto flex items-center justify-between px-6 py-4">
+                <a class="text-lg font-bold text-gray-900 dark:text-white experience-hover" href="#" id="name-logo">Anubhav Jha</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a class="text-gray-600 dark:text-gray-300 hover:text-[var(--primary-color)] transition-colors" href="#about">About</a>
+                    <a class="text-gray-600 dark:text-gray-300 hover:text-[var(--primary-color)] transition-colors" href="#skills">Skills</a>
+                    <a class="text-gray-600 dark:text-gray-300 hover:text-[var(--primary-color)] transition-colors" href="#projects">Projects</a>
+                    <a class="text-gray-600 dark:text-gray-300 hover:text-[var(--primary-color)] transition-colors" href="#testimonials">Testimonials</a>
+                    <a class="text-gray-600 dark:text-gray-300 hover:text-[var(--primary-color)] transition-colors" href="#contact">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="dark-mode-toggle" class="dark-mode-toggle p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
+                        <svg id="sun-icon" class="w-5 h-5 text-gray-800 dark:text-gray-200 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg id="moon-icon" class="w-5 h-5 text-gray-800 dark:text-gray-200 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                    <a href="Anubhav_Jha_CV.pdf" target="_blank">
+                    <button class="hidden md:inline-block rounded-md bg-[var(--primary-color)] px-6 py-2 text-white font-semibold hover:bg-opacity-90 transition-all">
+                        Resume
+                    </button>
+                    </a>
+                </div>
+                <button id="mobile-menu-toggle" class="md:hidden text-gray-900 dark:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </button>
+            </nav>
+            <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-900 border-t dark:border-gray-700">
+                <div class="px-6 py-4 space-y-4">
+                    <a class="block text-gray-600 dark:text-gray-300 hover:text-[var(--primary-color)] transition-colors" href="#about">About</a>
+                    <a class="block text-gray-600 dark:text-gray-300 hover:text-[var(--primary-color)] transition-colors" href="#skills">Skills</a>
+                    <a class="block text-gray-600 dark:text-gray-300 hover:text-[var(--primary-color)] transition-colors" href="#projects">Projects</a>
+                    <a class="block text-gray-600 dark:text-gray-300 hover:text-[var(--primary-color)] transition-colors" href="#testimonials">Testimonials</a>
+                    <a class="block text-gray-600 dark:text-gray-300 hover:text-[var(--primary-color)] transition-colors" href="#contact">Contact</a>
+                    <button class="w-full rounded-md bg-[var(--primary-color)] px-6 py-2 text-white font-semibold hover:bg-opacity-90 transition-all">
+                        Resume
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            <section class="flex items-center justify-center h-screen bg-gray-50 dark:bg-gray-800 pt-20 transition-colors duration-300" id="hero">
+                <div class="text-center px-6 opacity-0 animate-fade-in" style="animation-fill-mode: forwards; animation-delay: 0.2s;">
+                    <h1 class="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white leading-tight mb-4">
+                        Crafting Digital <span class="experience-hover" id="experience-text">Experiences</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+                        I'm a web developer specializing in creating dynamic and user-friendly websites. Let's bring your ideas to life.
+                    </p>
+                    <a class="inline-block rounded-md bg-[var(--primary-color)] px-8 py-4 text-lg text-white font-bold hover:bg-opacity-90 transition-all transform hover:scale-105" href="#projects">
+                        View Projects
+                    </a>
+                </div>
+            </section>
+
+<section class="py-24 bg-white dark:bg-gray-900 transition-colors duration-300" id="about">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">About Me</h2>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+            <div class="flex-shrink-0">
+                <img alt="Anubhav Jha" class="h-96 w-96 rounded-full object-cover shadow-lg" src="Anubhav-jha.jpg"/>
+            </div>
+            <div class="text-left text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto">
+                <p class="text-lg mb-4">Hi, I'm <span class="font-semibold text-gray-900 dark:text-white">Anubhav Jha</span>! 👋</p>
+                <p class="text-lg mb-4">A passionate web developer and AI/ML enthusiast with a Computer Science background, I craft <span class="font-medium text-gray-900 dark:text-white">intuitive, responsive, and accessible</span> web experiences that delight users and meet client needs. At <span class="font-medium text-gray-900 dark:text-white">Medoc</span>, I work on <span class="font-medium">RAG, OCR, Transformers,</span> and <span class="font-medium">Vision-Language Models</span>, while building scalable apps with <span class="font-medium">Node.js, React,</span> and <span class="font-medium">Python</span>.</p>
+                <div class="flex flex-col gap-2 mb-4 text-base">
+                    <p class="flex items-center gap-2"><span class="text-green-500">🌱</span> Learning <span class="font-medium">Agentic AI</span> and advanced <span class="font-medium">Node.js/React</span> for next-gen solutions.</p>
+                    <p class="flex items-center gap-2"><span class="text-yellow-500">👯</span> Keen to collaborate on <span class="font-medium">AI-driven web projects</span> or <span class="font-medium">interactive UIs</span>.</p>
+                    <p class="flex items-center gap-2"><span class="text-blue-500">🤝</span> Ask me about <span class="font-medium">RAG, Git LFS,</span> or <span class="font-medium">full-stack web dev</span>!</p>
+                </div>
+                <p class="text-lg">I blend <span class="font-medium text-gray-900 dark:text-white">technical expertise</span> with <span class="font-medium text-gray-900 dark:text-white">creative problem-solving</span> to deliver <span class="font-medium">high-performance</span> solutions that tackle real-world challenges.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>
